@@ -1,0 +1,109 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Banks/GetOnboardedUser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/Banks",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "Banks"
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/registeruser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/user/register",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "Users"
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/activateuser",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/user/activate",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "Users"
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/resendotp",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/user/resendotp",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "Users"
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/GetAllOnboardedUsers",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/user/getallonboarderdusers",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "Users"
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/getonboardeduser/{email}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/user/getonboardeduser/{email}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "Users"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "Banks",
+      "Config": [
+        {
+          "Name": "Alat Bank API",
+          "Version": "v1",
+          "Url": "https://localhost:4001/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Users",
+      "Config": [
+        {
+          "Name": "Alat Users API",
+          "Version": "v1",
+          "Url": "https://localhost:3001/swagger/v1/swagger.json"
+        }
+      ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost"
+  }
+}
